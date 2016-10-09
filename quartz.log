@@ -1,0 +1,624 @@
+java.lang.IllegalArgumentException: org.quartz.JobPersistenceException: Couldn't store trigger 'DEFAULT.0aa53b12-dc05-4aa3-a109-92562e2c9776' for 'DEFAULT.jobDetail' job:Deadlock detected. The current transaction was rolled back. Details: "
+Session #4 (user: SA) is waiting to lock PUBLIC.QRTZ_CRON_TRIGGERS while locking PUBLIC.QRTZ_LOCKS (exclusive), PUBLIC.QRTZ_FIRED_TRIGGERS (exclusive), PUBLIC.QRTZ_TRIGGERS (exclusive).
+Session #5 (user: SA) is waiting to lock PUBLIC.QRTZ_TRIGGERS while locking PUBLIC.QRTZ_CRON_TRIGGERS (exclusive)."; SQL statement:
+INSERT INTO QRTZ_CRON_TRIGGERS (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID)  VALUES('quartzScheduler', ?, ?, ?, ?) [40001-170] [See nested exception: org.h2.jdbc.JdbcSQLException: Deadlock detected. The current transaction was rolled back. Details: "
+Session #4 (user: SA) is waiting to lock PUBLIC.QRTZ_CRON_TRIGGERS while locking PUBLIC.QRTZ_LOCKS (exclusive), PUBLIC.QRTZ_FIRED_TRIGGERS (exclusive), PUBLIC.QRTZ_TRIGGERS (exclusive).
+Session #5 (user: SA) is waiting to lock PUBLIC.QRTZ_TRIGGERS while locking PUBLIC.QRTZ_CRON_TRIGGERS (exclusive)."; SQL statement:
+INSERT INTO QRTZ_CRON_TRIGGERS (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID)  VALUES('quartzScheduler', ?, ?, ?, ?) [40001-170]]
+	at com.sundoctor.quartz.service.SchedulerServiceImpl.schedule(SchedulerServiceImpl.java:82)
+	at com.sundoctor.quartz.service.SchedulerServiceImpl.schedule(SchedulerServiceImpl.java:41)
+	at com.sundoctor.quartz.service.SchedulerServiceImpl.schedule(SchedulerServiceImpl.java:35)
+	at com.sundoctor.quartz.service.SchedulerServiceImpl.schedule(SchedulerServiceImpl.java:30)
+	at com.sundoctor.example.test.SimpleServiceTest.test(SimpleServiceTest.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:233)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:87)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:176)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.quartz.JobPersistenceException: Couldn't store trigger 'DEFAULT.0aa53b12-dc05-4aa3-a109-92562e2c9776' for 'DEFAULT.jobDetail' job:Deadlock detected. The current transaction was rolled back. Details: "
+Session #4 (user: SA) is waiting to lock PUBLIC.QRTZ_CRON_TRIGGERS while locking PUBLIC.QRTZ_LOCKS (exclusive), PUBLIC.QRTZ_FIRED_TRIGGERS (exclusive), PUBLIC.QRTZ_TRIGGERS (exclusive).
+Session #5 (user: SA) is waiting to lock PUBLIC.QRTZ_TRIGGERS while locking PUBLIC.QRTZ_CRON_TRIGGERS (exclusive)."; SQL statement:
+INSERT INTO QRTZ_CRON_TRIGGERS (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID)  VALUES('quartzScheduler', ?, ?, ?, ?) [40001-170] [See nested exception: org.h2.jdbc.JdbcSQLException: Deadlock detected. The current transaction was rolled back. Details: "
+Session #4 (user: SA) is waiting to lock PUBLIC.QRTZ_CRON_TRIGGERS while locking PUBLIC.QRTZ_LOCKS (exclusive), PUBLIC.QRTZ_FIRED_TRIGGERS (exclusive), PUBLIC.QRTZ_TRIGGERS (exclusive).
+Session #5 (user: SA) is waiting to lock PUBLIC.QRTZ_TRIGGERS while locking PUBLIC.QRTZ_CRON_TRIGGERS (exclusive)."; SQL statement:
+INSERT INTO QRTZ_CRON_TRIGGERS (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID)  VALUES('quartzScheduler', ?, ?, ?, ?) [40001-170]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.storeTrigger(JobStoreSupport.java:1223)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$4.executeVoid(JobStoreSupport.java:1159)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3703)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3701)
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.executeInLock(JobStoreCMT.java:245)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.storeTrigger(JobStoreSupport.java:1155)
+	at org.quartz.core.QuartzScheduler.scheduleJob(QuartzScheduler.java:932)
+	at org.quartz.impl.StdScheduler.scheduleJob(StdScheduler.java:258)
+	at com.sundoctor.quartz.service.SchedulerServiceImpl.schedule(SchedulerServiceImpl.java:79)
+	... 32 more
+Caused by: org.h2.jdbc.JdbcSQLException: Deadlock detected. The current transaction was rolled back. Details: "
+Session #4 (user: SA) is waiting to lock PUBLIC.QRTZ_CRON_TRIGGERS while locking PUBLIC.QRTZ_LOCKS (exclusive), PUBLIC.QRTZ_FIRED_TRIGGERS (exclusive), PUBLIC.QRTZ_TRIGGERS (exclusive).
+Session #5 (user: SA) is waiting to lock PUBLIC.QRTZ_TRIGGERS while locking PUBLIC.QRTZ_CRON_TRIGGERS (exclusive)."; SQL statement:
+INSERT INTO QRTZ_CRON_TRIGGERS (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID)  VALUES('quartzScheduler', ?, ?, ?, ?) [40001-170]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.table.RegularTable.doLock(RegularTable.java:489)
+	at org.h2.table.RegularTable.lock(RegularTable.java:435)
+	at org.h2.constraint.ConstraintReferential.existsRow(ConstraintReferential.java:368)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:360)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:303)
+	at org.h2.table.Table.fireConstraints(Table.java:870)
+	at org.h2.table.Table.fireAfterRow(Table.java:887)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:126)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:75)
+	at org.h2.command.Command.executeUpdate(Command.java:230)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:156)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:142)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.insertExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:63)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.insertTrigger(StdJDBCDelegate.java:1098)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.storeTrigger(JobStoreSupport.java:1220)
+	... 40 more
+
+[2014-08-19 15:55:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:55:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:55:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:55:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:55:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:55:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:56:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:56:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:57:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:57:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:34]ERROR org.quartz.core.ErrorLogger(line:2425) -An error occurred while scanning for the next triggers to fire.
+org.quartz.JobPersistenceException: Couldn't acquire next trigger: org.h2.jdbc.JdbcSQLException: IO Exception: "Missing lob entry: 5/0" [90028-170] [See nested exception: java.io.IOException: org.h2.jdbc.JdbcSQLException: IO Exception: "Missing lob entry: 5/0" [90028-170]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2848)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2759)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2757)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+Caused by: java.io.IOException: org.h2.jdbc.JdbcSQLException: IO Exception: "Missing lob entry: 5/0" [90028-170]
+	at org.h2.message.DbException.convertToIOException(DbException.java:348)
+	at org.h2.store.LobStorage$LobInputStream.fillBuffer(LobStorage.java:466)
+	at org.h2.store.LobStorage$LobInputStream.readFully(LobStorage.java:439)
+	at org.h2.store.LobStorage$LobInputStream.read(LobStorage.java:430)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2310)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2323)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:2794)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:801)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:299)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.getObjectFromBlob(StdJDBCDelegate.java:3199)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectJobDetail(StdJDBCDelegate.java:860)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2816)
+	... 5 more
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "Missing lob entry: 5/0" [90028-170]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.store.LobStorage.readBlock(LobStorage.java:228)
+	at org.h2.store.LobStorage$LobInputStream.fillBuffer(LobStorage.java:463)
+	... 15 more
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -1b0ac487-f743-4c63-be1b-73a34c9b4fe9
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -1d711090-dfa8-4d74-95ff-81e8fc67c48e
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -75f938d7-8137-4d11-a919-061062d495a9
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:34]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:58:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:58:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:59:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:59:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 15:59:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 15:59:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 16:02:38]ERROR org.quartz.core.JobRunShell(line:211) -Job DEFAULT.jobDetail threw an unhandled Exception: 
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'simpleService': Singleton bean creation not allowed while the singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:215)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:979)
+	at com.sundoctor.example.service.MyQuartzJobBean.executeInternal(MyQuartzJobBean.java:21)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:112)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+[2014-08-19 16:02:38]ERROR org.quartz.core.ErrorLogger(line:2425) -Job (DEFAULT.jobDetail threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'simpleService': Singleton bean creation not allowed while the singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'simpleService': Singleton bean creation not allowed while the singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:215)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:979)
+	at com.sundoctor.example.service.MyQuartzJobBean.executeInternal(MyQuartzJobBean.java:21)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:112)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 more
+[2014-08-19 16:02:38]ERROR org.quartz.simpl.SimpleThreadPool(line:585) -Error while executing the Runnable: 
+java.lang.IllegalStateException: JobStore is shutdown - aborting retry
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retryExecuteInNonManagedTXLock(JobStoreSupport.java:3756)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.triggeredJobComplete(JobStoreSupport.java:3039)
+	at org.quartz.core.QuartzScheduler.notifyJobStoreJobComplete(QuartzScheduler.java:1804)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:269)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+[2014-08-19 16:02:55]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 16:02:55]ERROR org.springframework.scheduling.quartz.LocalDataSourceJobStore(line:3652) -Couldn't rollback jdbc connection. Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-170]
+org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-170]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1391)
+	at org.h2.jdbc.JdbcConnection.checkClosedForWrite(JdbcConnection.java:1376)
+	at org.h2.jdbc.JdbcConnection.rollback(JdbcConnection.java:462)
+	at com.mchange.v2.c3p0.impl.NewProxyConnection.rollback(NewProxyConnection.java:855)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:73)
+	at com.sun.proxy.$Proxy13.rollback(Unknown Source)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.rollbackConnection(JobStoreSupport.java:3650)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3809)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+[2014-08-19 16:02:55]ERROR org.quartz.core.ErrorLogger(line:2425) -An error occurred while scanning for the next triggers to fire.
+org.quartz.JobPersistenceException: Couldn't acquire next trigger: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-170] [See nested exception: org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-170]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2848)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2759)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2757)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+Caused by: org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-170]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1391)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1366)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:265)
+	at com.mchange.v2.c3p0.impl.NewProxyConnection.prepareStatement(NewProxyConnection.java:213)
+	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:73)
+	at com.sun.proxy.$Proxy13.prepareStatement(Unknown Source)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectJobDetail(StdJDBCDelegate.java:839)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2816)
+	... 5 more
+[2014-08-19 16:03:09]INFO  com.sundoctor.example.service.SimpleService(line:18) -22db121f-bad4-4374-b8af-e6664b65d817
+[2014-08-19 16:03:09]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 16:03:09]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 16:03:09]INFO  com.sundoctor.example.service.SimpleService(line:18) -d6683e60-11f4-4c06-96e2-60e5d357af0e
+[2014-08-19 16:03:09]INFO  com.sundoctor.example.service.SimpleService(line:18) -f6c8c28c-2bab-4e02-9879-c68a9422de5c
+[2014-08-19 16:03:09]ERROR org.quartz.core.ErrorLogger(line:2425) -An error occurred while scanning for the next triggers to fire.
+org.quartz.JobPersistenceException: Couldn't acquire next trigger: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2848)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2759)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2757)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2808)
+	... 5 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 6 more
+[2014-08-19 16:03:56]ERROR org.quartz.core.ErrorLogger(line:2425) -An error occurred while scanning for the next triggers to fire.
+org.quartz.JobPersistenceException: Couldn't acquire next trigger: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2848)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2759)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2757)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2808)
+	... 5 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 6 more
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:04:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:04:56]ERROR org.springframework.scheduling.quartz.LocalDataSourceJobStore(line:3940) -MisfireHandler: Error handling misfires: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverMisfiredJobs(JobStoreSupport.java:979)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.doRecoverMisfires(JobStoreSupport.java:3187)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$MisfireHandler.manage(JobStoreSupport.java:3935)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$MisfireHandler.run(JobStoreSupport.java:3956)
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 4 more
+[2014-08-19 16:05:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:05:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:05:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -3f97ec2f-d0b2-4aa6-92ef-5e02b6452f1e
+[2014-08-19 16:05:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -f31b70db-df23-4654-9fb8-f08dd6d05216
+[2014-08-19 16:09:52]ERROR org.springframework.test.context.TestContextManager(line:327) -Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@554c0af6] to prepare test instance [com.sundoctor.example.test.SimpleServiceTest@7363c839]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:324)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:213)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:290)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:292)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:233)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:87)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:176)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'quartzScheduler'; nested exception is org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:176)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:51)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:346)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:149)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:773)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:485)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:720)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:173)
+	... 37 more
+Caused by: org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:692)
+	at org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:567)
+	at org.quartz.impl.StdScheduler.start(StdScheduler.java:142)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.startScheduler(SchedulerFactoryBean.java:650)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:717)
+	... 38 more
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverMisfiredJobs(JobStoreSupport.java:979)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:866)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$1.executeVoid(JobStoreSupport.java:838)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3703)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3701)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:834)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:690)
+	... 42 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 50 more
+[2014-08-19 16:10:05]ERROR org.springframework.test.context.TestContextManager(line:327) -Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7363c839] to prepare test instance [com.sundoctor.example.test.SimpleServiceTest@1bee515e]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:324)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:213)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:290)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:292)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:233)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:87)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:176)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'quartzScheduler'; nested exception is org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:176)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:51)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:346)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:149)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:773)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:485)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:720)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:173)
+	... 37 more
+Caused by: org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:692)
+	at org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:567)
+	at org.quartz.impl.StdScheduler.start(StdScheduler.java:142)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.startScheduler(SchedulerFactoryBean.java:650)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:717)
+	... 38 more
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverMisfiredJobs(JobStoreSupport.java:979)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:866)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$1.executeVoid(JobStoreSupport.java:838)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3703)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3701)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:834)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:690)
+	... 42 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 50 more
+[2014-08-19 16:10:22]ERROR org.springframework.test.context.TestContextManager(line:327) -Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@38282baf] to prepare test instance [com.sundoctor.example.test.SimpleServiceTest@554c0af6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:324)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:213)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:290)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:292)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:233)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:87)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:176)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'quartzScheduler'; nested exception is org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:176)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:51)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:346)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:149)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:773)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:485)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.scheduling.SchedulingException: Could not start Quartz Scheduler; nested exception is org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:720)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:173)
+	... 37 more
+Caused by: org.quartz.SchedulerConfigException: Failure occured during job recovery. [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:692)
+	at org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:567)
+	at org.quartz.impl.StdScheduler.start(StdScheduler.java:142)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.startScheduler(SchedulerFactoryBean.java:650)
+	at org.springframework.scheduling.quartz.SchedulerFactoryBean.start(SchedulerFactoryBean.java:717)
+	... 38 more
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverMisfiredJobs(JobStoreSupport.java:979)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:866)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$1.executeVoid(JobStoreSupport.java:838)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3703)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback.execute(JobStoreSupport.java:3701)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.recoverJobs(JobStoreSupport.java:834)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.schedulerStarted(JobStoreSupport.java:690)
+	... 42 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.7aad9d5b-3877-4680-9a52-3cfd3516001f' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 50 more
+[2014-08-19 16:11:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:11:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:11:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:11:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:11:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:11:58]ERROR org.quartz.core.ErrorLogger(line:2425) -An error occurred while scanning for the next triggers to fire.
+org.quartz.JobPersistenceException: Couldn't acquire next trigger: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2848)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2759)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$40.execute(JobStoreSupport.java:2757)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3787)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2756)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:272)
+Caused by: org.quartz.JobPersistenceException: Couldn't retrieve trigger: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? [See nested exception: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1533)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2808)
+	... 5 more
+Caused by: java.lang.IllegalStateException: No record found for selection of Trigger with key: 'DEFAULT.04574af7-25c5-4231-b7e2-5352cc1d3d36' and statement: SELECT * FROM QRTZ_CRON_TRIGGERS WHERE SCHED_NAME = 'quartzScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ?
+	at org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate.loadExtendedTriggerProperties(CronTriggerPersistenceDelegate.java:92)
+	at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTrigger(StdJDBCDelegate.java:1819)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retrieveTrigger(JobStoreSupport.java:1531)
+	... 6 more
+[2014-08-19 16:11:58]INFO  com.sundoctor.example.service.SimpleService(line:18) -3662ceea-6f93-4759-8ba2-4af61be16abe
+[2014-08-19 16:17:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -a1324c94-a115-4c1b-8b1e-ba6c1ff165c8
+[2014-08-19 16:17:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -a1324c94-a115-4c1b-8b1e-ba6c1ff165c8
+[2014-08-19 16:18:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -a1324c94-a115-4c1b-8b1e-ba6c1ff165c8
+[2014-08-19 16:18:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -a1324c94-a115-4c1b-8b1e-ba6c1ff165c8
+[2014-08-19 16:18:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -a1324c94-a115-4c1b-8b1e-ba6c1ff165c8
+[2014-08-19 16:23:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:23:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:23:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:23:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:24:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -e6d6e3ed-3bc0-40a9-aa51-21140c6973cf
+[2014-08-19 16:25:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:25:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -2126dc8d-6972-4b5e-aed5-cb3f52e87fdd
+[2014-08-19 16:30:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -76839fc1-9e36-437d-8548-110b81e4526c
+[2014-08-19 16:31:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:31:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:31:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:40]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:32:50]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:33:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:33:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -463ebafd-abc3-4de6-bcff-10794959c69d
+[2014-08-19 16:33:00]INFO  com.sundoctor.example.service.SimpleService(line:18) -5bdac90d-722a-4330-b792-6d2e1c6be5e1
+[2014-08-19 16:33:10]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:33:20]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 16:33:30]INFO  com.sundoctor.example.service.SimpleService(line:18) -0cfd332f-a2ed-446a-8d27-0025a73888f0
+[2014-08-19 22:31:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:32:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:33:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:34:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:35:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:36:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:37:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:38:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:00]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:10]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:20]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:30]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:40]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
+[2014-08-19 22:39:50]INFO  com.sundoctor.example.service.SimpleService(line:14) -7e132a81-6d24-44e1-8d6c-15cdaeefb2ce
